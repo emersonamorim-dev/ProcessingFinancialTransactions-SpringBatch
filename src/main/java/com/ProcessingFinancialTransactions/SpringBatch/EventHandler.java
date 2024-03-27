@@ -18,10 +18,40 @@ public class EventHandler extends JobExecutionListenerSupport {
     public void afterJob(@SuppressWarnings("null") JobExecution jobExecution) {
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
             System.out.println("Processamento de transações financeiras concluído com sucesso!");
-            // Adicione aqui a lógica para notificar usuários, gerar relatórios, etc.
+
+            // Simulação de geração de relatório e notificação de usuários
+            generateReport(jobExecution);
+            notifyUsers();
         } else if(jobExecution.getStatus() == BatchStatus.FAILED) {
             System.out.println("Falha ao processar transações financeiras. Status: " + jobExecution.getStatus());
-            // Adicione aqui a lógica para tratamento de erros, envio de alertas, etc.
+
+            // Simulação de tratamento de erros e envio de alertas
+            handleError(jobExecution);
+            sendAlerts();
         }
+    }
+
+    private void generateReport(JobExecution jobExecution) {
+        // Lógica para gerar relatórios
+        System.out.println("Gerando relatório para a execução do job ID: " + jobExecution.getJobId());
+        // reportService.generateReport(jobExecution);
+    }
+
+    private void notifyUsers() {
+        // Lógica para notificar usuários
+        System.out.println("Notificando usuários sobre a conclusão do processamento.");
+        // notificationService.notifyUsers();
+    }
+
+    private void handleError(JobExecution jobExecution) {
+        // Lógica para tratamento de erros
+        System.out.println("Tratando erros para a execução do job ID: " + jobExecution.getJobId());
+        // alertService.handleError(jobExecution);
+    }
+
+    private void sendAlerts() {
+        // Lógica para envio de alertas
+        System.out.println("Enviando alertas sobre falhas no processamento.");
+        // alertService.sendAlert();
     }
 }
