@@ -1,4 +1,4 @@
-### ProcessingFinancialTransactions - Spring Batch
+### ProcessingFinancialTransactions - Spring Batch 🚀 🔄 🌐
 
 Codificação de aplicação para ProcessingFinancialTransactions é uma aplicação codificada em Java com SpringBoot e Spring Batch desenvolvida para automatizar o processamento de transações financeiras. Ela lê transações de uma fonte de dados, realiza processamento e validação de cada transação e, finalmente, registra o resultado em um sistema de destino ou banco de dados.
 
